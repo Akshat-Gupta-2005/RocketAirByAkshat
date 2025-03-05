@@ -1,113 +1,204 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-html , body{
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html,
+body {
+
+    scroll-behavior: smooth;
+
     height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif; /* Font family */
+    /* width: 100%; */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+
+    /* Font family */
 }
 
-body{
-    background-color: rgb(255, 255, 255);
-    
+body {
+    background-color: rgb(0, 0, 0);
+    /* overflow-y: hidden; */
+    /* scrollbar-width: none; Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    overflow-y: scroll;
+    /* Enables scrolling */
+    position: relative;
 }
 
-nav{
+/* ----------------------nav----------------------- */
+
+nav {
     position: fixed;
     top: 0px;
-    width: 96vw;
+    left: 2px;
+    width: 100vw;
     padding: 15px 45px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 9;
+    box-sizing: border-box;
+
 }
-#logo{
+
+#logo {
     height: 30px;
 }
 
-.sidenav{
+.sidenav {
     display: flex;
-    gap:30px;
-    padding-right: 25px;
+    gap: 30px;
+    /* padding-right: 25px; */
     align-items: center;
 }
 
-#fourdots{
+#fourdots {
     color: white;
     /* background-color: red */
     filter: invert(1);
     height: 45px;
 }
 
-#getintouch{
+#getintouch {
     height: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 11px 20px;
-    color: #000000; /* Button text color */
+    color: #000000;
+    /* Button text color */
     font-size: 13px;
-    font-weight: 500; 
+    font-weight: 500;
     background-color: #dcfe01;
     border-radius: 20px;
-    
+
 }
 
-/* --------------------------------------------- */
-#page1{
+/* ----------------------page1----------------------- */
+#page1 {
     /* visibility: hidden   ; */
     color: white;
     background-color: rgb(0, 0, 0);
     position: relative;
-    width: 100%;
-    height: 54vh;
+    /* width: 100%; */
+    height: 70vh;
     top: 0px;
-    padding: 60px 45px ;
-    font-size: 90px;
-    font-weight: 100;
+    padding: 60px 45px;
+    font-size: 89px;
+    font-weight: 200;
+    box-sizing: border-box;
 }
 
-.line{
+.line {
     display: inline;
     /* background-color: red; */
 }
 
-#page1 svg{
-    width:"500" ;
-    height:"50"
-}
-
-#righta{
+#righta {
+    box-sizing: border-box;
+    /* visibility: hidden   ; */
+    /* width: 100vw; */
     text-align: right;
-    padding-right: 83px;
-    position: fixed;
-    right: -13px;
+    /* padding-right: 120px; */
+    /* position: absolute; */
+    /* right: -13px; */
 }
 
-#righta span{
-    position: fixed;
-    top: 275px;
-    right: 43px;
+#righta span {
+    box-sizing: border-box;
+    position: relative;
+    top: -15px;
+    left: 0px;
     font-size: 25px;
     vertical-align: super;
 }
 
 #coth {
-    font-family: 'Arial', sans-serif; 
-    font-size: 10px; 
-    color: #ffffff; 
-    padding: 30px 150px; 
-    text-align: center; 
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    color: #ffffff;
+    padding: 32px 58px;
+    text-align: center;
     position: absolute;
     bottom: 0px;
     right: 0px;
     letter-spacing: 1px;
+    display: flex;
+
 }
-#coth img{
+
+#coth div {
+    /* background-color: yellow; */
+    padding: 0px;
+    margin: 0px;
+}
+
+#coth img {
+    overflow: hidden;
     position: relative;
-    top: 3px;
-    left: 10px;
+    top: -2px;
+    left: 11px;
 }
-  
+
+/* ----------------------page2----------------------- */
+
+#page2 {
+
+    color: white;
+    background-color: rgb(88, 88, 88);
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    /* Invisible but prevents interaction */
+    pointer-events: auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* Blocks hover and click */
+    cursor: none;    
+}
+
+#cursor{
+    scale: 0;
+    position: fixed;
+    right: 750;
+    z-index: 12;
+    height: 130px;
+    width:  130px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#overlay2{
+    position: absolute;
+    z-index: 13;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: rgba(255, 0, 0, 0.763); */
+}
