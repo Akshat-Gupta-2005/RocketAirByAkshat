@@ -13,27 +13,35 @@
         <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/625008de558fafd4df9501ab_logo_RocketAir.svg"
             id="logo" />
         <div class="sidenav">
-            <span id="getintouch">
-
-                Get in touch
-            </span>
-            <img src="https://www.svgrepo.com/show/446596/four-dots-square.svg" id="fourdots" />
+            <div id="getintouch">
+                <div id="up"></div>
+                <div id="text">Get in touch</div>
+                <div id="down"></div>
+            </div>
+            <!-- <img src="https://www.svgrepo.com/show/446596/four-dots-square.svg" fill="red" id="fourdots" /> -->
+            <svg id="fourdots" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <!-- Four circles instead of squares -->
+                <circle cx="6" cy="6" r="3" fill="white"/>
+                <circle cx="18" cy="6" r="3" fill="white"/>
+                <circle cx="6" cy="18" r="3" fill="white"/>
+                <circle cx="18" cy="18" r="3" fill="white"/>
+            </svg>
 
         </div>
     </nav>
 
     <div id="page1">
-        <div class="load">Digital</div>
+        <div class="load1">Digital</div>
 
         <div class="line">
-            <div class="line load">experiences</div>
-            <div class="line"><svg width="760" height="50">
+            <div class="line load1">experiences</div>
+            <div id="svgline" class="line"><svg width="760" height="50">
                     <path d="M 10 30 Q 250 30 750 30" stroke="white" fill="transparent" />
                 </svg></div>
-            <div class="line load">that</div>
+            <div class="line load2">that</div>
         </div>
 
-        <div id="righta" class="load">Win by Design<span>&trade;</span> </div>
+        <div id="righta" class="load2">Win by Design<span>&trade;</span> </div>
         <div id="coth">
             <div id="blink">
                 CHECK OUT THE HYPE
@@ -49,10 +57,23 @@
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
             </iframe>
             <div id="overlay">
-                <div id="cursor">Play 
+                <div id="cursorthis">Play 
                 </div>
                 <div id="overlay2"></div>
             </div>
+    </div>
+
+    <div id="page3">
+        <div id="container">
+            <h3 id="midtext">RocketAir is a design and strategy <br>company with an adaptive approach <br>to problem solving.</h3>
+
+            <div id="wecallit">
+                <div id="wecallittext">We call it</div>
+                <div id="wecallitsvg"><svg width="760" height="50">
+                    <path d="M 10 30 Q 250 30 750 30" stroke="white" fill="transparent" />
+                </svg></div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"

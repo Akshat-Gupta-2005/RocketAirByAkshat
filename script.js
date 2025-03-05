@@ -15,7 +15,27 @@ function page1() {
     })
 
     let tl = gsap.timeline()
-    tl.from("#page1 .load", {
+    tl.from("#page1 .load1", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power2.in"
+    })
+
+    tl.from("#page1 svg" , {
+        x:"-1000",
+        opacity:0,
+        duration:0.2,
+        ease:"power2.out"
+    } , "cool")
+    tl.from("#page2 " , {
+        y:"10",
+        opacity:0,
+        duration:0.2,
+        ease:"power2.out"
+    } , "cool")
+
+    tl.from("#page1 .load2", {
         y: 20,
         opacity: 0,
         stagger: 0.2,
@@ -61,51 +81,91 @@ function page1() {
         }
 
     })
+
+    let getintouch = document.getElementById("getintouch")
+    getintouch.addEventListener("mouseenter" , ()=>{
+        gsap.to("#getintouch #up" , {
+            y:-16,
+            duration:0.2,
+        })
+        gsap.to("#getintouch #down" , {
+            y:16,
+            duration:0.2,
+        })
+        gsap.to("#getintouch #text" , {
+            color:"white",
+            // duration:0.1,
+        })
+    })
+    getintouch.addEventListener("mouseleave" , ()=>{
+        gsap.to("#getintouch #up" , {
+            y:0,
+            duration:0.2,
+        })
+        gsap.to("#getintouch #down" , {
+            y:0,
+            duration:0.2,
+        })
+        gsap.to("#getintouch #text" , {
+            color:"black",
+            // duration:0.2,
+        })
+    })
+
+    let fourdots = document.getElementById("fourdots")
+    fourdots.addEventListener("mouseenter",()=>{
+        document.querySelectorAll("#fourdots circle").forEach(circle => {
+            circle.setAttribute("fill", "#dcfe01");
+        });
+    })
+    fourdots.addEventListener("mouseleave",()=>{
+        document.querySelectorAll("#fourdots circle").forEach(circle => {
+            circle.setAttribute("fill", "white");
+        });
+    })
 }
 
 function page2() {
     let overlay2 = document.querySelector("#overlay2")
 
     overlay2.addEventListener("mouseenter", () => {
-        gsap.to("#cursor", {
+        gsap.to("#cursorthis", {
             scale: 1,
             duration: 1,
         })
     })
 
     overlay2.addEventListener("mouseleave", () => {
-        gsap.to("#cursor", {
+        gsap.to("#cursorthis", {
             scale: 0,
             duration: 0.3,
             x: 703,
-            y: 357,
+            y: 334,
         })
     })
 
     overlay2.addEventListener("mousemove", (dets) => {
-        gsap.to("#cursor", {
-            x: dets.x - 65,
-            y: dets.y - (603),
+        gsap.to("#cursorthis", {
+            x: dets.pageX  - 50,
+            y: dets.pageY - 600,
             duration: 0.1,
         })
-        console.log(dets);
-
     })
 
     overlay2.addEventListener("click", () => {
         let iframe = document.getElementById("iframe");
         let currentSrc = iframe.src;
-        let cur = document.getElementById("cursor")
+        let cur = document.getElementById("cursorthis")
         if (currentSrc.includes("mute=1")) {
             iframe.src = currentSrc.replace("mute=1", "mute=0"); // Unmute the video
-            gsap.from("#cursor", {
+            gsap.from("#cursorthis", {
                 scale: 0,
                 duration: 1,
             })
             cur.innerHTML = "x"
         } else {
             iframe.src = currentSrc.replace("mute=0", "mute=1"); // Mute the video again
-            gsap.from("#cursor", {
+            gsap.from("#cursorthis", {
                 scale: 0,
                 duration: 1,
             })
